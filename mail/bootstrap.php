@@ -1,6 +1,13 @@
 <?php
-define('THEME_BOOTSTRAPPED', TRUE);
+define('THEME_BOOTSTRAPPED', TRUE); // move to functions.php in WordPress
 defined('THEME_BOOTSTRAPPED') or exit();
+
+/**
+ * Mail Bootstrapping
+ *
+ * Attach mailing code to actions (in a WordPress environment) or to other
+ * events in your CMS.
+ */
 
 require_once(__DIR__ . "/sender.php");
 require_once(__DIR__ . "/lib/emogrifier/Classes/Emogrifier.php");
@@ -24,46 +31,21 @@ function interpolate_template($template, &$data) {
 // EXAMPLE USE
 
 //global $site_name;
+// used for mail `from' field, and potentially in templates
 $site_name = 'GEL';
+// used for mail `from' field (probably not the main contact address)
 $site_email = 'noreply@jelly.com';
+// path to directory storing static assets (logo, icons, etc.)
+$theme_assets = 'http://temp.local/';
 
+// name-email pair OR array of name-email pairs
 $to = [
-    [
-        'name' => 'Testing Zoho',
-        'email' => 'himself@blieque.co.uk',
-    ],
+    'name' => 'Testing Zoho',
+    'email' => 'testing@isaacpartnership.co.uk',
 ];
-
-// NEWSLETTER THANK-YOU
-/*
-$data = [
-    'name' => 'Barry Darren',
-];
-list($subject, $body) = interpolate_template('newsletter-thank-you', $data);
-send_mail($to, $subject, $body);
-*/
-
-// REGISTRATION ACTIVATION ("click link to confirm address")
-/*
-$data = [
-    'name' => 'Barry Darren',
-    'activation_url' => 'http://temp.local/account/activation/',
-];
-list($subject, $body) = interpolate_template('registration-activation', $data);
-send_mail($to, $subject, $body);
-*/
-
-// REGISTRATION CONFIRMATION ("welcome!")
-/*
-$data = [
-    'name' => 'Barry Darren',
-    'login_url' => 'http://temp.local/account/login/',
-];
-list($subject, $body) = interpolate_template('registration-confirmation', $data);
-send_mail($to, $subject, $body);
-*/
 
 // ORDER COMPLETE
+// data object to be passed to the template
 $data = [
     'name' => 'Barry Darren',
     'basket' => [
@@ -78,5 +60,10 @@ $data = [
     ],
     'view_orders_url' => 'http://temp.local/account/orders/',
 ];
+/**
+ * Interpolate the template with the data and pass it to the mailer function.
+ * The template name given is used to find the template script
+ * "templates/<name>.php".
+ */
 list($subject, $body) = interpolate_template('order-complete', $data);
 send_mail($to, $subject, $body);

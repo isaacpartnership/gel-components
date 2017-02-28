@@ -1,15 +1,15 @@
 <?php
 defined('THEME_BOOTSTRAPPED') or exit();
 
+// title string and head function are both optional so have fallback values
 $template_title = $template_title ?? $template_subject;
 $template_head = $template_head ?? function(){};
 
+// main template function, which echoes its output
 $base_template = function()
 use ($template_title, $template_subject, $template_head, $template_body) {
-    //global $theme_assets;
-    //global $site_name;
-    $theme_assets = 'http://temp.local/';
-    $site_name = 'GEL';
+    global $theme_assets;
+    global $site_name;
 
     //$business = get_option('theme_contact_business') ?? $site_name;
     //$company_number = get_option('theme_contact_company_number') ?? '';

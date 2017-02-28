@@ -1,3 +1,5 @@
+/* GENERAL */
+
 body,
 html {
     height: 100%;
@@ -52,6 +54,9 @@ a:not(.a--self):not(.form__button) {
     opacity: .6;
     pointer-events: none;
 }
+
+/* HEADER */
+
 .header {
     height: 72px;
     max-height: 72px;
@@ -66,9 +71,14 @@ a:not(.a--self):not(.form__button) {
     width: auto;
     height: 40px;
     max-height: 40px;
-    color: #5793c1;
+    color: #205379;
+    font-family: "Proxima Nova", "Montserrat", "Avenir", "Futura", "Open Sans", "Helvetica Neue", "Segoe UI", "Franklin Gothic", "FranklinGothic URW", sans-serif;
     font-size: 30px;
+    font-weight: bold;
 }
+
+/* THREE-PART LAYOUT (header, content, footer) */
+
 .tertia {
     width: 100%;
     min-height: 0;
@@ -90,6 +100,9 @@ a:not(.a--self):not(.form__button) {
 .tertia__wrapper > p {
     margin: 16px 0!important;
 }
+.tertia__clearfix {
+    clear: both;
+}
 .tertia h1,
 .tertia h2,
 .tertia h3 {
@@ -98,6 +111,9 @@ a:not(.a--self):not(.form__button) {
 .tertia a {
     color: #5793c1;
 }
+
+/* FOOTER */
+
 .footer {
     background-color: #3d3d3d;
     font-size: 9.5pt;
@@ -120,6 +136,8 @@ a:not(.a--self):not(.form__button) {
     letter-spacing: 0.01em;
 }
 
+/* FORM BUTTON-LIKE LINKS */
+
 .form__button {
     display: inline-block;
     margin: 8px 0 16px;
@@ -134,13 +152,8 @@ a:not(.a--self):not(.form__button) {
     letter-spacing: 0.01em;
 }
 
-table,
-thead,
-tbody,
-tr {
-    display: block;
-    width: 100%;
-}
+/* TABLES */
+
 table {
     margin: 12px 0;
     border-spacing: 0;
@@ -152,19 +165,35 @@ table {
 tbody tr {
     border-bottom: solid 1px #f1f1f1 !important;
 }
-tr,
-.tertia__clearfix {
-    clear: both;
+td,
+th {
+    padding: 8px 0;
 }
 .table__row--total {
     border-width: 2px;
 }
+.table__cell--price {
+    text-align: right;
+}
+
+/**
+ * Two-column float table
+ * Remove this section if you're using tables with more columns.
+ */
+table,
+thead,
+tbody,
+tr {
+    display: block;
+    width: 100%;
+}
+tr {
+    clear: both;
+}
 td,
 th {
-    padding: 8px 0;
     float: left;
 }
 .table__cell--price {
     float: right;
-    text-align: right;
 }

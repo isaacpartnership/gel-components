@@ -22,7 +22,7 @@ $template_body = function() use (&$data) {
     };
 
     $basket_markup = '';
-    if (isset($data['basket'])) {
+    if (isset($data['basket']) && count($data['basket'])) {
         $total = 0;
         $basket_markup .= '<table>';
         $basket_markup .= '<colgroup><col style="width:80%"></col>';
