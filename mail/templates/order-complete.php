@@ -24,10 +24,12 @@ $template_body = function() use (&$data) {
     $basket_markup = '';
     if (isset($data['basket'])) {
         $total = 0;
-        $basket_markup .= '<table><col style="width:80%"></col>';
-        $basket_markup .= '<col style="width:20%"></col><thead><tr>';
+        $basket_markup .= '<table>';
+        $basket_markup .= '<colgroup><col style="width:80%"></col>';
+        $basket_markup .= '<col style="width:20%"></col></colgroup>';
+        $basket_markup .= '<thead><tr>';
         $basket_markup .= '<th>Item</th><th class="table__cell--price">Cost';
-        $basket_markup .= '</th></tr><tr><thead><tbody>';
+        $basket_markup .= '</th></tr><tr></thead><tbody>';
         foreach ($data['basket'] as &$item) {
             $total += $item['price'];
             $price_str = $format_price($item['price']);
@@ -36,8 +38,8 @@ $template_body = function() use (&$data) {
         }
         $total_str = $format_price($total);
         $basket_markup .= "<tr class=\"table__row--total\"><th>Total</th>";
-        $basket_markup .= "<td class=\"table__cell--price\">{$total_str}</td></tr>";
-        $basket_markup .= '</tbody></table>';
+        $basket_markup .= "<td class=\"table__cell--price\">{$total_str}</td>";
+        $basket_markup .= '</tr></tbody></table><div class="tertia__clearfix"></div>';
     }
 ?>
 
