@@ -1,6 +1,9 @@
 <?php
 defined('THEME_BOOTSTRAPPED') or exit();
 
+$template_title = $template_title ?? $template_subject;
+$template_head = $template_head ?? function(){};
+
 $base_template = function()
 use ($template_title, $template_subject, $template_head, $template_body) {
     //global $theme_assets;
@@ -41,6 +44,7 @@ use ($template_title, $template_subject, $template_head, $template_body) {
         <title><?= $template_title ?? $template_subject ?? '' ?></title>
         <style><?= $mail_stylesheet_content ?? '' ?></style>
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <?php $template_head() ?>
     </head>
     <body class="tertia">
         <div class="header">
