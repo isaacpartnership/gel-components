@@ -1,0 +1,6 @@
+[submodule "mail/lib/emog"]
+	path = mail/lib/emog
+	url = https://github.com/jjriv/emogrifier.git
+[submodule "mail/lib/emogrifier"]
+	path = mail/lib/emogrifier
+	url = https://github.com/jjriv/emogrifier.git

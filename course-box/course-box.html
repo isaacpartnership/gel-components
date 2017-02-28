@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="course-box.css">
+        <title>GEL Components</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <p>Set of a few:</p>
+        <div class="course-list">
+            <div class="course-box" style="background-color: #6d6">
+                <img class="course-box__image" src="images/01-200.jpg" srcset="images/01-200.jpg 1x, images/01-600.jpg 2x" alt="">
+                <div class="course-box__copy">
+                    <h3 class="course-box__category">The Category</h3>
+                    <h4 class="course-box__title">A Course with a Level and a Really, Really Long Name That Should Still Work</h4>
+                </div>
+                <span class="course-box__level">L3</span>
+            </div>
+            <a class="course-box" href="." style="background-color: #39e">
+                <img class="course-box__image" src="images/02-200.jpg" srcset="images/02-200.jpg 1x, images/02-600.jpg 2x" alt="">
+                <div class="course-box__copy">
+                    <h3 class="course-box__category">Another Category</h3>
+                    <h4 class="course-box__title">A Course with a Link</h4>
+                </div>
+                <span class="course-box__level">L1</span>
+            </a>
+            <a class="course-box" href="." style="background-color: #223">
+                <img class="course-box__image" src="images/03-200.jpg" srcset="images/03-200.jpg 1x, images/03-600.jpg 2x" alt="">
+                <div class="course-box__copy">
+                    <h3 class="course-box__category">Category the Third</h3>
+                    <h4 class="course-box__title">A Course with a Link But No Level</h4>
+                </div>
+            </a>
+            <!--
+            {{ if course.url }}
+            <a class="course-box" style="background-color: {{ category.color }}" href="{{ course.url }}">
+            {{ else }}
+            <div class="course-box" style="background-color: {{ category.color }}">
+            {{ endif }}
+                <img class="course-box__image" src="{{ course.image200 }}" srcset="{{ course.image200 }} 1x, {{ course.image600 }} 2x">
+                <div class="course-box__copy">
+                    <h3 class="course-box__category">{{ category.title }}</h3>
+                    <h4 class="course-box__title">{{ course.title }}</h4>
+                </div>
+                {{ if course.level }}
+                    <span class="course-box__level">L{{ course.level }}</span>
+                {{ endif }}
+            {{ if course.url }}
+            </a>
+            {{ else }}
+            </div>
+            {{ endif }}
+            -->
+        </div>
+        <p>Individual:</p>
+        <div class="course-box" style="background-color: #e28">
+            <img class="course-box__image" src="images/03-200.jpg" srcset="images/03-200.jpg 1x, images/03-600.jpg 2x" alt="">
+            <div class="course-box__copy">
+                <h3 class="course-box__category">Category Lonesome</h3>
+                <h4 class="course-box__title">Course on Its Larry</h4>
+            </div>
+        </div>
+        <h3>Fields</h3>
+        <p>
+            <pre>
+- course
+    - .title
+    - .image200
+    - .image600
+    - .category
+        - .title
+        - .color
+    - .url (optional)
+    - .level (optional)
+            </pre>
+        </p>
+    </body>
+</html>

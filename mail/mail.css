@@ -1,0 +1,171 @@
+body,
+html {
+    height: 100%;
+    min-height: 100%;
+}
+body {
+    margin: 0;
+    font-family: "Open Sans", "Helvetica Neue", "Segoe UI", "Franklin Gothic", "FranklinGothic URW", sans-serif;
+    line-height: 1.4;
+}
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.header__logo,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+}
+h1 {
+    font-size: 2em;
+}
+h1:first-child {
+    margin-top: .2em;
+}
+p {
+    color: #3d3d3d;
+}
+p strong {
+    color: #000;
+}
+p:first-child {
+    margin-top: 0!important;
+}
+p:last-child {
+    margin-bottom: 0!important;
+}
+hr {
+    margin: 2rem .05rem;
+    border: none;
+    height: .1rem;
+    background-color: #ededed;
+}
+a:active,
+a:focus {
+    outline: 0;
+}
+.a--cta,
+a:not(.a--self):not(.form__button) {
+    color: #5793c1;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: inset 0 -.05em 0 0, 0 .05em 0 0;
+    transition: all ease .2s;
+}
+.a--cta:focus,
+.a--cta:hover,
+a:not(.a--self):not(.form__button):focus,
+a:not(.a--self):not(.form__button):hover {
+    box-shadow: inset 0 -.05em 0 0, 0 .15em 0 0;
+}
+.a--cta::after,
+a:not(.a--self):not(.form__button)::after {
+    content: '';
+    position: absolute;
+    top: -.2em;
+    right: -.3em;
+    bottom: -.2em;
+    left: -.3em;
+    box-shadow: 0 0 0 999rem inset;
+    opacity: 0;
+}
+.a--cta:focus::after,
+a:not(.a--self):not(.form__button):focus::after {
+    opacity: .2;
+}
+.disabled {
+    opacity: .6;
+    pointer-events: none;
+}
+.header {
+    height: 72px;
+    max-height: 72px;
+    background-color: #f1f1f1;
+}
+.header .tertia__wrapper {
+    height: 40px;
+    max-height: 40px;
+    box-sizing: border-box;
+}
+.header__logo {
+    width: auto;
+    height: 40px;
+    max-height: 40px;
+    color: #5793c1;
+    font-size: 30px;
+}
+.tertia {
+    width: 100%;
+    min-height: 0;
+    font-size: 11pt;
+    line-height: 1.3em;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.tertia__wrapper {
+    padding: 16px 32px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 600px;
+}
+.tertia__wrapper > a,
+.tertia__wrapper > h1,
+.tertia__wrapper > h2,
+.tertia__wrapper > h3,
+.tertia__wrapper > p {
+    margin: 16px 0!important;
+}
+.tertia__clearfix {
+    clear: both;
+}
+.tertia h1,
+.tertia h2,
+.tertia h3 {
+    color: #000;
+}
+.tertia a {
+    color: #5793c1;
+}
+.footer {
+    background-color: #3d3d3d;
+    font-size: 9.5pt;
+}
+.footer,
+.footer p {
+    color: #ccc;
+}
+.footer p {
+    margin: .8em 0;
+}
+.footer__full-color {
+    color: #fff;
+}
+.footer__from {
+    display: inline-block;
+    margin-bottom: .1em;
+    font-weight: bold;
+    font-size: 130%;
+    letter-spacing: 0.01em;
+}
+
+.form__button {
+    display: inline-block;
+    margin: 8px 0 16px;
+    padding: 10px 16px 12px;
+    float: left;
+    color: #fff !important;
+    background-color: #ea5621;
+    font: inherit;
+    font-size: 110%;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+}

@@ -1,0 +1,35 @@
+.tertia {
+    width: 100%;
+    min-height: 0;
+    font-size: 11pt;
+    line-height: 1.3em;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &__wrapper {
+        padding: 16px 32px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 600px;
+
+        > h1,
+        > h2,
+        > h3,
+        > p,
+        > a {
+            margin: 16px 0 !important;
+        }
+    }
+
+    &__clearfix {
+        clear: both;
+    }
+
+    h1, h2, h3 {
+        color: #000;
+    }
+
+    a {
+        color: $color-links;
+    }
+}
